@@ -7,9 +7,17 @@ import java.util.Scanner;
 public class DirectoryWatcher {
     private final File file;
     private Document[] documents;
+    private int size;
     public DirectoryWatcher(String path) {
         file = new File(path);
+        size = 0;
+        documents = new Document[100];
         GetFiles(file);
+        SortDocuments sortDocuments = new SortDocuments(documents);
+        documents = sortDocuments.ReturnSorted();
+        for (int i = 0; i < size; ++i) {
+            System.out.println(documents[0].GetContents());
+        }
     }
     private void GetFiles(File file) {
         File[] directoryContents = file.listFiles();
@@ -20,12 +28,8 @@ public class DirectoryWatcher {
                 GetFiles(entry);
                 continue;
             }
-            try {
-                Scanner scanner = new Scanner(entry);
-                String contents = scanner.
-            } catch (java.io.FileNotFoundException fileNotFoundException) {
-                System.out.println("Po idee takoe ne dolzhno vipadat");
-            }
+            documents[size] = new Document(entry);
+            size++;
         }
     }
 }
