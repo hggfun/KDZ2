@@ -21,6 +21,7 @@ public class DirectoryWatcher {
     }
     private void GetFiles(File file) {
         File[] directoryContents = file.listFiles();
+        assert directoryContents != null;
         for (File entry : directoryContents)
         {
             if (entry.isDirectory())
