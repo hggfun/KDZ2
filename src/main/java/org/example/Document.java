@@ -22,9 +22,10 @@ public class Document {
         return fullPath;
     }
     public String GetParent () {
-        return parentFullPath;
+        return parentFullPath + ".txt";
     }
     private void FindParent() {
+        contents = "";
         try {
             Scanner scanner = new Scanner(file);
             String line;
@@ -35,7 +36,7 @@ public class Document {
                     break;
                 }
                 if (line.substring(0, 7).equals("require")) {
-                    parentFullPath = line.substring(8, line.length()-2);
+                    parentFullPath = line.substring(9, line.length()-1);
                 }
                 contents += line;
             }

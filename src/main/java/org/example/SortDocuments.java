@@ -1,8 +1,5 @@
 package org.example;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class SortDocuments {
     private final Document[] documents;
     public SortDocuments (Document[] documents) {
@@ -21,7 +18,6 @@ public class SortDocuments {
         this.documents = Sort(documents1);
     }
     private Document[] Sort(Document[] docs) {
-        Map<String, String> map = new HashMap<String, String>();
         int size = docs.length;
         for (int i = 0; i < size; ++i) {
             String parent = docs[i].GetParent();
