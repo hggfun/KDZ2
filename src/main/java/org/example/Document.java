@@ -22,7 +22,7 @@ public class Document {
         return fullPath;
     }
     public String GetParent () {
-        return parentFullPath + ".txt";
+        return parentFullPath;
     }
     private void FindParent() {
         contents = "";
