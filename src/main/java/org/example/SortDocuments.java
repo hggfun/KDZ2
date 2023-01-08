@@ -14,11 +14,17 @@ public class SortDocuments {
         } else {
             size = documents.length;
         }
+        System.out.println("!!!!");
         Document[] documents1 = new Document[size];
         for (int i = 0; i < size; i++) {
             documents1[i] = documents[i];
+            System.out.println(documents1[i].GetContents());
         }
         this.documents = Sort(documents1);
+        System.out.println("@@@@");
+        for (int i = 0; i < size; i++) {
+            System.out.println(this.documents[i].GetContents());
+        }
     }
     private Document[] Sort(Document[] docs) {
         Map<String, String> map = new HashMap<String, String>();

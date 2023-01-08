@@ -10,8 +10,6 @@ public class Document {
         this.file = file;
         fullPath = file.getAbsolutePath();
         FindParent();
-        System.out.println(contents);
-        System.out.println(fullPath);
     }
     private File file;
     private String fullPath;

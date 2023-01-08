@@ -16,7 +16,7 @@ public class DirectoryWatcher {
         SortDocuments sortDocuments = new SortDocuments(documents);
         documents = sortDocuments.ReturnSorted();
         for (int i = 0; i < size; ++i) {
-            System.out.println(documents[0].GetContents());
+            System.out.println(documents[i].GetContents());
         }
     }
     private void GetFiles(File file) {
